@@ -6,29 +6,45 @@ class Jogo extends StatefulWidget {
 }
 
 class _JogoState extends State<Jogo> {
+
+  var imagemApp = AssetImage("imagens/padrao.png");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            "JokenPo"
-        ),
+        title: Text("JokenPo"),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(top: 32, bottom: 16),
             child: Text(
               "Escolha do app",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Image.asset("imagens/padrao.png"),
+          Image(
+             image: imagemApp
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 32, bottom: 16),
+            child: Text(
+              "Escolha uma opção abaixo",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Image.asset("imagens/pedra.png", height: 100),
+              Image.asset("imagens/papel.png", height: 100),
+              Image.asset("imagens/tesoura.png", height: 100),
+            ],
+          )
         ],
       ),
     );
